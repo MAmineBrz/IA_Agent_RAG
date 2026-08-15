@@ -8,3 +8,9 @@ wheels/
 
 # Virtual environments
 .venv
+.env
+.env
+qdrant_storage/
+.venv/
+__pycache__/
+*.pyc
