@@ -3,6 +3,7 @@ import uuid
 from qdrant_client import QdrantClient
 from qdrant_client.models import VectorParams, Distance, PointStruct
 
+
 class QdrantStorage:
     def __init__(self, url="http://localhost:6333", collection="docs", dim=3072):
         self.client = QdrantClient(url=url, timeout=30)
@@ -12,6 +13,7 @@ class QdrantStorage:
                 collection_name=self.collection,
                 vectors_config=VectorParams(size=dim, distance=Distance.COSINE),
             )
+
     def upsert(self, ids: list[str], vectors: list[list[float]], payloads: list[dict]):
         points = [
             PointStruct(
@@ -20,7 +22,7 @@ class QdrantStorage:
                 payload=payloads[i],
             )
             for i in range(len(ids))
-            ]
+        ]
         self.client.upsert(self.collection, points=points)
 
     def search(self, query_vector, top_K: int = 5):
@@ -30,17 +32,16 @@ class QdrantStorage:
             with_payload=True,
             limit=top_K,
         ).points
-    
+
         contexts = []
         sources = set()
-    
+
         for r in result:
             payload = getattr(r, "payload", None) or {}
             text = payload.get("text", "")
-            source = payload.get("source", "")
+            source = payload.get("source_id", "")
             if text:
                 contexts.append(text)
                 sources.add(source)
-    
+
         return {"contexts": contexts, "sources": list(sources)}
-        
