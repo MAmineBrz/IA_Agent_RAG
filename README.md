@@ -12,6 +12,8 @@
 
 ## 📖 Description
 
+![Aperçu du système](screenshots/apercu.png)
+
 **IA Agent RAG** est un assistant conversationnel qui répond à vos questions en s'appuyant sur le contenu de vos documents PDF. Le système extrait le texte, le découpe en chunks sémantiques, génère des embeddings vectoriels, puis retrouve les passages pertinents pour formuler une réponse contextualisée avec GPT-4.
 
 ### 🎯 Fonctionnalités
