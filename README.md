@@ -28,20 +28,7 @@
 
 ## 🏗️ Architecture
 
-```
-┌─────────────┐      ┌──────────────┐      ┌─────────────┐
-│  Streamlit  │─────▶│   Inngest    │─────▶│   FastAPI   │
-│   (UI/UX)   │      │(Orchestrator)│      │  (Backend)  │
-└─────────────┘      └──────────────┘      └──────┬──────┘
-                                                   │
-                    ┌──────────────────────────────┼──────────────┐
-                    │                              │              │
-                    ▼                              ▼              ▼
-             ┌─────────────┐              ┌──────────────┐  ┌──────────┐
-             │ LlamaIndex  │              │   OpenAI     │  │  Qdrant  │
-             │(PDF Parser) │              │(Embed + LLM) │  │(VectorDB)│
-             └─────────────┘              └──────────────┘  └──────────┘
-```
+![Architecture du système RAG](screenshots/architecture.png)
 
 ### Pipeline d'ingestion (une fois par PDF)
 
