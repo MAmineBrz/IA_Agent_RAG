@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.61-red?logo=streamlit)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.141-green?logo=fastapi)
-![Qdrant](https://img.shields.io/badge/Qdrant-1.19-purple)q
+![Qdrant](https://img.shields.io/badge/Qdrant-1.19-purple)
 ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-black?logo=openai)
 
 ---
